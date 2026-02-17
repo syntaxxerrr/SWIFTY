@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .button {
+            display: inline-block;
+            padding: 6px 12px;
+            margin: 2px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .button:hover { background-color: #0056b3; }
+        input { margin-bottom: 10px; }
+        .error { color: red; }
+        .success { color: green; }
+    </style>
+</head>
+<body>
+    <h1>Login</h1>
+    #if(error):
+        <p class="error">#(error)</p>
+    #endif
+    #if(registered):
+        <p class="success">#(registered)</p>
+    #endif
+    <form action="/login" method="post">
+        <label>Username:</label><br>
+        <input type="text" name="username" required><br>
+        <label>Password:</label><br>
+        <input type="password" name="password" required><br>
+        <button type="submit" class="button">Login</button>
+    </form>
+    <p>Don't have an account? <a href="/signup" class="button">Sign up</a></p>
+</body>
+</html>
