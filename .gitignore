@@ -1,0 +1,6 @@
+.build/
+Packages/
+.swiftpm/
+*.tar.gz
+
+
